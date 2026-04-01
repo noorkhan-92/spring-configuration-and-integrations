@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-cache
+
+cache:
+  ttl: 60
+  size: 1000
+  initial-capacity: 100
+  max-idle: 60
+  hazelcast:
+    enable: false
+  caffeine:
+    enable: false

@@ -1,0 +1,24 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO # can be changed with DEBUG or TRACE for debudding
+        security: INFO
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: spring-security
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+#          jwk-set-uri: http://localhost:8080/realms/my-reaml/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/spring-keycloak-test
+      client:
+        registration:
+          keycloak:
+            client-id: spring-boot-app
+            client-secret: secret123

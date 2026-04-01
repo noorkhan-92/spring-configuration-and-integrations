@@ -1,0 +1,5 @@
+cache:
+  hazelcast:
+    enable: false
+  caffeine:
+    enable: true

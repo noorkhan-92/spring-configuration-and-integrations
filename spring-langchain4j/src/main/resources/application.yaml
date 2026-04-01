@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-langchain4j
+
+google:
+  gemini:
+    api-key:
+
+groq:
+  api-key:
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: ${OPEN-AI_API-KEY}
+      model-name: gpt-4o
+      log-requests: true
+      log-responses: true
