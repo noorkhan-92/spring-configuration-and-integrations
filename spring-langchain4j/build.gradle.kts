@@ -35,6 +35,7 @@ dependencies {
 	implementation("dev.langchain4j:langchain4j-spring-boot-starter:1.12.2-beta22")
 	implementation("dev.langchain4j:langchain4j-google-ai-gemini-spring-boot-starter:1.12.2-beta22")
 	implementation("dev.langchain4j:langchain4j-open-ai:1.13.0")
+	implementation("dev.langchain4j:langchain4j-ollama:1.13.0")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("tools.jackson.module:jackson-module-kotlin")
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")

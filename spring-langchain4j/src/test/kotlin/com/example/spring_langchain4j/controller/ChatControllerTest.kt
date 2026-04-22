@@ -40,9 +40,10 @@ class ChatControllerTest(@Autowired val chatController: ChatController) {
 
     @Test
     fun testTool() {
-        val response = chatController.calculate("what is product of 3, 5")
-        println(response)
-        assertThat(response).isEqualTo(15)
+        val sum = chatController.calculate("what is the sum of 3 and 5")
+        assertThat(sum).isEqualTo(8)
+        val product = chatController.calculate("what is the product of 3 and 5")
+        assertThat(product).isEqualTo(15)
     }
 
     @Test
@@ -50,8 +51,10 @@ class ChatControllerTest(@Autowired val chatController: ChatController) {
         var reqResponse = "Lets have a discussion on Artificial General Intelligence (AGI)."
         repeat(5) {
             reqResponse = chatController.callAgent(reqResponse, "firstExpert")
+            println("***Response By EXPERT-1***")
             println(reqResponse)
             reqResponse = chatController.callAgent(reqResponse, "secondExpert")
+            println("***Response By EXPERT-2***")
             println(reqResponse)
         }
     }

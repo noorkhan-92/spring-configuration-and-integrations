@@ -3,10 +3,12 @@ package com.example.spring_langchain4j.config
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.request.ResponseFormat
 import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel
+import dev.langchain4j.model.ollama.OllamaChatModel
 import dev.langchain4j.model.openai.OpenAiChatModel
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import java.time.Duration
 
 @Configuration
 class ModelConfig {
@@ -45,6 +47,17 @@ class ModelConfig {
             .baseUrl("https://api.groq.com/openai/v1")
             .apiKey(groqApikey)
             .modelName("openai/gpt-oss-120b")
+            .build()
+    }
+
+    @Bean
+    fun ollamaModel(): ChatModel {
+        return OllamaChatModel.builder()
+            .baseUrl("http://localhost:11434")
+            .modelName("llama3.2:1b")
+            .topK(1000)
+            .temperature(1.0)
+            .timeout(Duration.ofSeconds(30))
             .build()
     }
 }

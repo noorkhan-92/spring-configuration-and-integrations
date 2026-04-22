@@ -4,15 +4,15 @@ spring:
 
 google:
   gemini:
-    api-key:
+    api-key: # from env
 
 groq:
-  api-key:
+  api-key: # from env
 
 langchain4j:
   open-ai:
     chat-model:
-      api-key: ${OPEN-AI_API-KEY}
+      api-key: # from env variable
       model-name: gpt-4o
       log-requests: true
       log-responses: true

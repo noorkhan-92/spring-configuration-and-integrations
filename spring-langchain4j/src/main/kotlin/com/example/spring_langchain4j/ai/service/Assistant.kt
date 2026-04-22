@@ -5,7 +5,7 @@ import dev.langchain4j.service.SystemMessage
 import dev.langchain4j.service.spring.AiService
 import dev.langchain4j.service.spring.AiServiceWiringMode
 
-@AiService(wiringMode = AiServiceWiringMode.EXPLICIT, chatModel = "geminiModel", chatMemory = "chatMemory")
+@AiService(wiringMode = AiServiceWiringMode.EXPLICIT, chatModel = "ollamaModel", chatMemory = "chatMemory")
 interface Assistant {
     @SystemMessage("You are a funny assistant")
     fun chatFunny(request: String): String
