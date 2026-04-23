@@ -6,7 +6,7 @@ import dev.langchain4j.service.Result
 import org.springframework.stereotype.Service
 
 @Service
-class GeminiService(val models: List<ChatModel>, val assistant: Assistant) {
+class ModelService(val models: List<ChatModel>, val assistant: Assistant) {
     fun chat(request: String): String {
         models.forEach {
             println(it.toString())
